@@ -1,7 +1,7 @@
 # What is  Agentic AI ?
 
 """
-Agentic AI is a type of AI that can take up a task or goal from a user 
+Agentic AI is a type of AI that can take up a task or goal from a user
 and then work toward completeting it on its own, with minimal human guidance.
 It plans, take action, adapts to changes, and seeks help only when necessary.
 
@@ -20,13 +20,13 @@ It plans, take action, adapts to changes, and seeks help only when necessary.
     1. Our Al recruiter is autonomous
     2. It's proactive
     3. Autonomy in multiple facets
-        a. Execution 
+        a. Execution
         b. Decision making
         C. Tool usage
     4. Autonomy can be controlled
         a. Permission Scope - Limit what tools or actions the agent can perform independently.
            (Can screen candidates, but needs approval before rejecting anyone.)
-        b. Human-in-the-Loop (HITL) - Insert checkpoints where human approval is required before 
+        b. Human-in-the-Loop (HITL) - Insert checkpoints where human approval is required before
            continuing. (Can I post this JD)
         c. Override Controls - Allow users to stop, pause, or change the agent's behaviour at any time. (pause
            screening command to halt resume processing.)
@@ -79,11 +79,11 @@ It plans, take action, adapts to changes, and seeks help only when necessary.
     Step 3: Select the best plan with the help of:
         . Human-in-the-loop input (e.g., "Which of these options do you prefer?")
         · A pre-programmed policy (e.g., "Favor low-cost channels first")
-        
+
 ? 4) Reasoning
     Reasoning is the cognitive process through which an agentic ai system interprets information,
     draws conclusions, and makes decisions - both while planning ahead and while executing actions in real time.
-    
+
     Reasoning During Planning:
         1. Goal decomposition - Break down abstract goals into concrete steps
         2. Tool selection - Decide which tools will be needed for which steps
@@ -99,7 +99,7 @@ It plans, take action, adapts to changes, and seeks help only when necessary.
 
     1. Failures (Calendar API)
     2. External feedback (Less no of applications)
-    3. Changing goals (Hiring a freelancer)        
+    3. Changing goals (Hiring a freelancer)
 
 ? 6) Context Awareness
     Context awareness is the agent's ability to understand, retain, and utilize relevant information
@@ -108,17 +108,17 @@ It plans, take action, adapts to changes, and seeks help only when necessary.
 
     1. Types of context
         a. The original goal
-        b. Progress till now + Interaction history 
+        b. Progress till now + Interaction history
            *(Job description was finalized and posted to Linkedln & GitHub Jobs)
-        c.Environment state 
+        c.Environment state
           *(Number of applicants so far = 8 or LinkedIn promotion ends in 2 days)
-        d. Tool responses 
+        d. Tool responses
            *(Resume parser -> "Candidate B has 3 years Django + AWS experience) or
            *(Calendar API -> "No conflicts at 2 PM Wednesday)
-        e. User specific preferences 
+        e. User specific preferences
            *(Prefers remote-first candidates or Likes receiving interview questions in Google Doc)
         f. Policy or Guardrails
-           *(Do not send offer without explicit user approval) or 
+           *(Do not send offer without explicit user approval) or
            *(Never use platforms that require paid ads unless approved)
     2. Context awareness is implemented through memory
     3. Short term memory
@@ -147,11 +147,11 @@ It plans, take action, adapts to changes, and seeks help only when necessary.
 
 ? Tools:
 External Actions      - Perform API calls [e.g., post a job, send an email, trigger onboarding]
-Knowledge Base Access - Retrieve factual or domain-specific information uning RAG or search tools to 
+Knowledge Base Access - Retrieve factual or domain-specific information uning RAG or search tools to
                         ground responses.
 
 ? Memory:
-Short-Term Memory     - Maintains the active session's context - retent sser messages, tool call, and 
+Short-Term Memory     - Maintains the active session's context - retent sser messages, tool call, and
                         immediane decisiones.
 Long-Term Memory      - Persists high-level goals, past interactions, user preferences, and decisions across
 State Tracking        - Monitors progress: what's completed, what's pending (e.g. "ID posted", "Ofer sent").

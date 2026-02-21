@@ -1,0 +1,33 @@
+---------------
+os.environ
+---------------
+os.environ is a built-in dictionary-like object in Python.
+It gives you access to environment variables that are already set in your system.
+It comes from the built-in os module.
+
+Example: 
+---------------
+import os
+print(os.environ["PATH"])       # Get variable
+print(os.environ.get("HOME"))   # Safe get
+
+---------------
+load_dotenv()
+---------------
+load_dotenv() comes from the python-dotenv package.
+It is used to read variables from a .env file and load them into os.environ.
+You must install it:
+>>> pip install python-dotenv
+
+Example:
+---------------
+Suppose you have a .env file:
+SECRET_KEY=abc123
+DEBUG=True
+
+Then in Python:
+
+from dotenv import load_dotenv
+import os
+load_dotenv()   # This loads .env into os.environ
+print(os.getenv("SECRET_KEY"))
