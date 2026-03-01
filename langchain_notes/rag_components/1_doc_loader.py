@@ -2,7 +2,7 @@
 * Introduction to RAG (Retrieval-Augmented Generation)
 RAG is a technique used to overcome the limitations of LLMs, such as training data cut-offs (lack of current info) and lack of access to private/personal data.
 
-* How it works: 
+* How it works:
     It connects an LLM to an external knowledge base (PDFs, databases, etc.). When a query is made, the system retrieves relevant info from this base and uses it as context for the LLM.
 * Key Components of RAG:
     1. Document Loaders (Loading data from sources)
@@ -16,7 +16,7 @@ Document Loaders are LangChain components that load data from various sources in
 * Structure of a Document Object:
     > Page Content: The actual text data.
     > Metadata: Information about the data (source, page number, author, etc.)
-    > Storage: All loaders in LangChain typically return a list of Document Objects 
+    > Storage: All loaders in LangChain typically return a list of Document Objects
 
 * Key Document Loaders Covered
     A. Text Loader
@@ -49,3 +49,60 @@ Document Loaders are LangChain components that load data from various sources in
 * Custom Document Loaders
 If a source isn't supported by LangChain, you can create a custom loader by inheriting from the BaseLoader class and defining your own load and lazy_load logic.
 """
+
+from langchain_community.document_loaders import (
+    TextLoader,
+    PyPDFLoader,
+    CSVLoader,
+)
+
+
+TEXT_FILE_PATH = "langchain_notes\\rag_components\\random_data\\random.txt"
+PDF_FILE_PATH = "langchain_notes\\rag_components\\random_data\\random.pdf"
+CSV_FILE_PATH = "langchain_notes\\rag_components\\random_data\\random.csv"
+
+text_loader = TextLoader(TEXT_FILE_PATH, encoding="utf-8")
+pdf_loader = PyPDFLoader(PDF_FILE_PATH)
+csv_loader = CSVLoader(CSV_FILE_PATH)
+
+text_docs = text_loader.load()
+pdf_docs = pdf_loader.load()
+csv_docs = csv_loader.load()
+
+print(
+    f"Type of TEXT-DOCS: {type(text_docs)} PDF-DOCS: {type(pdf_docs)} CSV-DOCS: {type(csv_docs)}"
+)
+print(
+    f"Length of TEXT-DOCS: {len(text_docs)} PDF-DOCS: {len(pdf_docs)} CSV-DOCS: {len(csv_docs)}"
+)
+
+# ----------------------------------------------------------------------
+# Web Based Loader
+# ----------------------------------------------------------------------
+
+from langchain_community.document_loaders import WebBaseLoader
+
+url = "https://en.wikipedia.org/wiki/2026_Afghanistan%E2%80%93Pakistan_war"
+loader = WebBaseLoader(url)
+
+docs = loader.load()
+print(type(docs), len(docs))
+print("---" * 20)
+print(docs[0])
+
+# ----------------------------------------------------------------------
+# Directory Loader
+# ----------------------------------------------------------------------
+
+from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
+
+loader = DirectoryLoader(
+    path="langchain_notes\\rag_components\\random_data",
+    glob="*.pdf",
+    loader_cls=PyPDFLoader,
+)
+
+docs = loader.lazy_load()
+
+for document in docs:
+    print(document.metadata)
