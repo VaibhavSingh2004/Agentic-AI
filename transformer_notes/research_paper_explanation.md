@@ -30,7 +30,7 @@ The paper defines two equations.
 
 ### Hidden state update
 
-![Equation - 1](..\transformer_notes\assets\equation-1.png)
+![Equation - 1](\transformer_notes\assets\equation-1.png)
 
 
 
