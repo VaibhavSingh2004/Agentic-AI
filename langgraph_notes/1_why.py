@@ -6,7 +6,7 @@ Generative Al refers to a class of artificial intelligence models
 that can create new content - such as text, images, audio,
 code, or video - that resembles human-created data.
 
--> LLMs based apps like Chat GPTTTS models like ElevenLabs
+-> LLMs based apps like Chat GPTS models like ElevenLabs
 -> Diffusion models for images
 -> Code generating LLMs like
 

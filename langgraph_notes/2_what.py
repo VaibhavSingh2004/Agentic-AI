@@ -98,7 +98,7 @@ It plans, take action, adapts to changes, and seeks help only when necessary.
     unexpected conditions - all while staying aligned with the goal.
 
     1. Failures (Calendar API)
-    2. External feedback (Less no of applications)
+    2. External feedback (Less no. of applications)
     3. Changing goals (Hiring a freelancer)
 
 ? 6) Context Awareness
@@ -151,8 +151,8 @@ Knowledge Base Access - Retrieve factual or domain-specific information uning RA
                         ground responses.
 
 ? Memory:
-Short-Term Memory     - Maintains the active session's context - retent sser messages, tool call, and
-                        immediane decisiones.
+Short-Term Memory     - Maintains the active session's context - retain error messages, tool call, and
+                        immediate decisiones.
 Long-Term Memory      - Persists high-level goals, past interactions, user preferences, and decisions across
 State Tracking        - Monitors progress: what's completed, what's pending (e.g. "ID posted", "Ofer sent").
 
@@ -160,4 +160,14 @@ State Tracking        - Monitors progress: what's completed, what's pending (e.g
 Approval Requests (HITL) - Agent checks with human before high-risk actions (e.g., sending offers).
 Guardrails Enforcement   - Blocks unsafe or non-compliant behavior.
 Edge Case Escalation     - Alerts humans when uncertainty/conflict arises.
+"""
+
+# ? Differnece between Workflows and Agents
+"""
+*(https://www.anthropic.com/engineering/building-effective-agents)
+!Workflows: 
+    are systems where LLMs and tools are orchestrated through predefined code paths.
+!Agents:
+    on the other hand, are systems where LLMs dynamically direct their own processes 
+    and tool usage, maintaining control over how they accomplish tasks.
 """
